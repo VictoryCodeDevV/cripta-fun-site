@@ -6,3 +6,18 @@ $(window).on("load", function() {
         }, index * 500); // Задержка увеличивается для каждого следующего элемента
     });
 });
+
+// scroll
+
+const page = document.querySelector(".page")
+const items = document.querySelectorAll("section")
+
+page.addEventListener('wheel', (event) => {
+    event.preventDefault()
+    const delta = event.deltaY
+
+    page.scrollBy({
+        top: delta,
+        behavior: 'smooth',
+    })
+})
